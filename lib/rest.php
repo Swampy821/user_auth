@@ -25,14 +25,18 @@
                 $method = $vars[1]; 
                 $vars = array_slice($vars, 2);
                 $argArray = array();
+                $type = 'GET';
                 if(count($getArray)) {
                     $argArray = $getArray;
+                    $type = 'GET';
                 }else if(count($postArray)) {
                     $argArray = $postArray;
+                    $type = 'POST';
                 }else{
                     $argArray = $vars;
+                    $type = 'GET';
                 }
-                return $activeClass->$method($argArray);
+                return $activeClass->$method($type, $argArray);
             }
         }
         
