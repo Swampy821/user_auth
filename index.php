@@ -3,6 +3,6 @@
     
     $rest = new Rest();
     
-    $rest->process($_GET, $_POST);
+    echo json_encode($rest->process($_GET, $_POST));
 
 ?>
