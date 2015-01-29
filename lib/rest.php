@@ -34,8 +34,6 @@
                     $argArray = $vars;
                     $type = 'GET';
                 }
-                var_dump($argArray);
-                echo $type;
                 return $activeClass->$method($type, $argArray);
             }
         }
