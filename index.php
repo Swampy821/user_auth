@@ -1,7 +1,7 @@
 <?php
 
-    include('./lib/rest.php');
+    include('./lib/Rest.php');
     
     $rest = new Rest();
 
-    echo json_encode($rest->process($_GET, $_POST));
+    $rest->process($_GET, $_POST);
