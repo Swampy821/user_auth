@@ -60,9 +60,4 @@
             return $this->_addUser($args['username'], md5($args['password']), $args['sprite']);
         }
 
-        public function echoStuff() {
-            echo "Account <br>";
-            var_dump($this->db->db());
-        }
-
     }

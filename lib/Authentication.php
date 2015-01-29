@@ -21,10 +21,6 @@
             $this->db = $db;
         }
 
-        public function echoStuff($type, $args) {
-            return $args;
-        }
-
         public function getDB($type, $args) {
             return $this->_connect();
         }
