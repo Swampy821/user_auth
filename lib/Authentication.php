@@ -15,12 +15,6 @@
 
         private $db;
 
-        private function _connect() {
-            $this->db = new FlatDB(dirname(__FILE__).'/../db/db.csv');
-            return $this->db->db();
-        }
-
-
         // Public
 
         public function __construct($db) {
