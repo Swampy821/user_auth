@@ -209,8 +209,7 @@ class FlatDB {
      */
     public function __construct($filename) {
         $this->filename = $filename;
+        echo $this->filename;
         $this->fetch();
     }
 }
-
-?>

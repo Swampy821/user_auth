@@ -41,8 +41,8 @@ class Auth {
     }
     
     
-    private function connect() {
-        $this->db = new FlatDB(dirname(__FILE__) .'/../../db/db.csv');
+    private function _connect() {
+        $this->db = new FlatDB(dirname(__FILE__).'/../../db/db.csv');
         return $this->db->db();
     }
     
@@ -62,12 +62,12 @@ class Auth {
     }
     
     public function getDB($type, $args) {
-        return $this->connect();
+        return $this->_connect();
     }
     
     public function addUser($type, $args) {
         if($type !== 'POST' || count($args) !== 3) { return "Invalid Arguments"; }
-        $db = $this->connect();
+        $db = $this->_connect();
         if(count($this->_find($db, 1, $args['username']))>0) {
             return 'exists';
         }

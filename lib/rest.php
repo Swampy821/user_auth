@@ -1,22 +1,20 @@
-<?php 
-    function __autoload($class_name) {
+<?php
+
+    function __autoload($class_name)
+    {
         $nameSpace = array(
             'Auth'
         );
-        foreach($nameSpace as $space) {
-            $fileLocation = __DIR__ . '/' .$space . '/' . $class_name . '.php';
-            if(file_exists($fileLocation)) {
-
+        foreach ($nameSpace as $space) {
+            $fileLocation = __DIR__ . '/' . $space . '/' . $class_name . '.php';
+            if (file_exists($fileLocation)) {
                 include $space . '/' . $class_name . '.php';
             }
-        }   
+        }
     }
-    
-    
-    
+
     class Rest {
-        
-        
+
         public function process(array $getArray, array $postArray) {
             $vars = $this->computeURL($_SERVER['PHP_SELF']);
             if(count($vars)>1) {
@@ -36,6 +34,8 @@
                     $argArray = $vars;
                     $type = 'GET';
                 }
+                var_dump($argArray);
+                echo $type;
                 return $activeClass->$method($type, $argArray);
             }
         }
@@ -46,7 +46,6 @@
             $url = explode('/', $url);
             return array_slice($url,1);
         }
-
 
     }
 
